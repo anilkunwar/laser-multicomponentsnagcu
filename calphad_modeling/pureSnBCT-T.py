@@ -60,7 +60,7 @@ if plot_type == "Matplotlib":
 
 elif plot_type == "Plotly":
     df_melted = df.melt(id_vars=["Temperature(K)"], var_name="Term", value_name="Value")
-    fig = px.line(df_melted, x="Temperature (K)", y="Value", color="Term", markers=True,
+    fig = px.line(df_melted, x="Temperature(K)", y="Value", color="Term", markers=True,
                   title="Gibbs Free Energy Terms")
     fig.update_layout(xaxis_title="Temperature (K)", yaxis_title="Term Value")
     st.plotly_chart(fig)
