@@ -26,7 +26,7 @@ T_step = st.slider("Temperature Step (K)", 5, 50, 30, 5)
 # Generate temperature range
 temperatures = np.arange(T_start, T_end + 1, T_step)
 
-data = {"Temperature (K)": temperatures}
+data = {"Temperature(K)": temperatures}
 terms = ["Term 1: Constant", "Term 2: Linear", "Term 3: T*ln(T)", 
          "Term 4: Quadratic", "Term 5: Cubic", "Term 6: Inverse T", "Total Energy"]
 
@@ -50,7 +50,7 @@ plot_type = st.radio("Choose Plot Type", ["Matplotlib", "Plotly"])
 if plot_type == "Matplotlib":
     fig, ax = plt.subplots(figsize=(10, 6))
     for term in terms:
-        ax.plot(df["Temperature (K)"], df[term], marker='o', label=term)
+        ax.plot(df["Temperature(K)"], df[term], marker='o', label=term)
     ax.set_xlabel("Temperature (K)")
     ax.set_ylabel("Term Value")
     ax.set_title("Gibbs Free Energy Terms")
@@ -59,7 +59,7 @@ if plot_type == "Matplotlib":
     st.pyplot(fig)
 
 elif plot_type == "Plotly":
-    df_melted = df.melt(id_vars=["Temperature (K)"], var_name="Term", value_name="Value")
+    df_melted = df.melt(id_vars=["Temperature(K)"], var_name="Term", value_name="Value")
     fig = px.line(df_melted, x="Temperature (K)", y="Value", color="Term", markers=True,
                   title="Gibbs Free Energy Terms")
     fig.update_layout(xaxis_title="Temperature (K)", yaxis_title="Term Value")
