@@ -27,8 +27,10 @@ T_step = st.slider("Temperature Step (K)", 5, 50, 30, 5)
 temperatures = np.arange(T_start, T_end + 1, T_step)
 
 data = {"Temperature(K)": temperatures}
-terms = ["Term 1: Constant", "Term 2: Linear", "Term 3: T*ln(T)", 
-         "Term 4: Quadratic", "Term 5: Cubic", "Term 6: Inverse T", "Total Energy"]
+#terms = ["Term 1: Constant", "Term 2: Linear", "Term 3: T*ln(T)", 
+#         "Term 4: Quadratic", "Term 5: Cubic", "Term 6: Inverse T", "Total Energy"]
+terms = ["Term1_Constant", "Term2_Linear", "Term3_TlnT", 
+         "Term4_Quadratic", "Term5_Cubic", "Term6_InverseT", "TotalEnergy"]
 
 # Compute Gibbs energy terms
 gibbs_data = {term: [] for term in terms}
